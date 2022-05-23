@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 20px;
+            width: 800px;
+            margin: 0 auto;
+
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        pre {
+            /* width: 80vh; */
+
+            font-size: 1rem;
+            background-color: ghostwhite;
+            padding-left: 10px;
+            color: brown;
+            border: 1px solid gray;
+            margin: 0;
+        }
+
+        table,
+        td,
+        tr {
+            width: 800px;
+
+            border: 1px solid gray;
+            border-radius: 3%;
+        }
+
+        .col1 {
+            width: 30%;
+        }
+
+        .col2 {
+            width: 70%;
+        }
+
+        .tabletitle {
+            background-color: lightgrey;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PHP資訊庫程式設計筆記</h1>
+
+    <h2>MySQL/MariaDB 資料庫語法</h2>
+
+    <pre>
+    <p>統計12個月份學生生日人數:</p>
+    SELECT Month(`birthday`) as '出生月份', count(*) as '人數'
+        FROM `students` 
+        GROUP BY MONTH(`birthday`) 
+        ORDER BY MONTH(`birthday`)
+    </pre>
+    <p>撰寫SQL語法順序</p>
+    SELECT > FROM > WHERE > GROUP BY > HAVING > ORDER BY
+    <P>SQL語法執行順序</P>
+    FROM > WHERE > GROUP BY > HAVING > SELECT > ORDER BY
+    <!-- <div> -->
+    <table>
+        <tr class="tabletitle">
+            <td>關鍵詞</td>
+            <td>執行的意義</td>
+        </tr>
+        <tr>
+            <td class="col1">FROM</td>
+            <td class="col2">需要從哪個資料表檢索資料
+            </td>
+        </tr>
+        <tr>
+            <td>WHERE</td>
+            <td>過濾表中資料
+            </td>
+        </tr>
+        <tr>
+            <td>GROUP BY</td>
+            <td>將上面過濾出的資料分組</td>
+        </tr>
+        <tr>
+            <td>HAVING</td>
+            <td>對上面已經分組的資料進行過濾</td>
+        </tr>
+        <tr>
+            <td>SELECT</td>
+            <td>檢視結果集中的哪個列，或列的計算結果</td>
+        </tr>
+        <tr>
+            <td>ORDER BY</td>
+            <td>按照什麼樣的順序來檢視返回的資料</td>
+        </tr>
+    </table>
+    <!-- </div> -->
+</body>
+
+</html>
